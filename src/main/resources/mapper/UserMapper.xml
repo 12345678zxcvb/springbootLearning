@@ -10,6 +10,8 @@
     </select>
 
     <!--void deleteById(Integer id);-->
-
+    <delete id="deleteById" parameterType="Integer">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
 
 </mapper>

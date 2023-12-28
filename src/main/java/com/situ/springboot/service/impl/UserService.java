@@ -16,4 +16,9 @@ public class UserService implements IUserService {
 
         return userMapper.selectAll();
     }
+    @Override
+    public void deleteById(Integer id){
+        userMapper.deleteById(id);
+    }
+
 }

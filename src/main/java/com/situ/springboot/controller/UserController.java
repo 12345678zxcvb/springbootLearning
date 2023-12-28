@@ -18,6 +18,11 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+    @RequestMapping("/deleteById")
+    public String deleteById(Integer id){
+        userService.deleteById(id);
+        return "redirect:/user/selectAll";
+    }
     @RequestMapping("/selectAll")
     //@ResponseBody//return json
 

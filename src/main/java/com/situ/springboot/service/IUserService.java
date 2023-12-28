@@ -5,5 +5,6 @@ import com.situ.springboot.pojo.User;
 import java.util.List;
 
 public interface IUserService {
-    public List<User> selectAll();
+    List<User> selectAll();
+    void deleteById(Integer id);
 }
