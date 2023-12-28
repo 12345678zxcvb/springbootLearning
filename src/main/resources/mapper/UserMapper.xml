@@ -13,5 +13,8 @@
     <delete id="deleteById" parameterType="Integer">
         DELETE FROM user WHERE id=#{id}
     </delete>
+    <insert id="add" parameterType="User">
+        INSERT INTO user(name, password,email,phone,image, role) values (#{name},#{password},#{email},#{phone},#{image},#{role})
+    </insert>
 
 </mapper>

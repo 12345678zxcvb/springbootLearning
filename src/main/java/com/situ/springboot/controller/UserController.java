@@ -23,6 +23,15 @@ public class UserController {
         userService.deleteById(id);
         return "redirect:/user/selectAll";
     }
+    @RequestMapping("/toAdd")
+    public String toadd(){
+        return "user_toadd";
+    }
+    @RequestMapping("/add")
+    public String add(User user){
+        userService.add(user);
+        return "redirect:/user/selectAll";
+    }
     @RequestMapping("/selectAll")
     //@ResponseBody//return json
 
