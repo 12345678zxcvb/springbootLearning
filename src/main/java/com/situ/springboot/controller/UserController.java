@@ -30,7 +30,11 @@ public class UserController {
             return "redirect:/user/toLogin";
         }
     }
-
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/user/toLogin";
+    }
     @RequestMapping("/deleteById")
     public String deleteById(Integer id){
         userService.deleteById(id);
