@@ -23,5 +23,11 @@ public class UserService implements IUserService {
     public void add(User user){
         userMapper.add(user);
     }
+    public User selectById(Integer id){
+        return userMapper.selectById(id);
+    }
+    public void update(User user){
+        userMapper.update(user);
+    }
 
 }

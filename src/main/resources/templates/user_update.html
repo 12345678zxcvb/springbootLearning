@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div th:replace="header::common"></div>
+
+    <style>
+        .center {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<form class="center" action="/user/update" method="post">
+    <input type="hidden" name="id" th:value="${user.id}">
+    <div class="form-group">
+        <label>用户名</label>
+        <input type="text" class="form-control" name="name" th:value="${user.name}">
+    </div>
+    <div class="form-group">
+        <label>密码</label>
+        <input type="text" class="form-control" name="password" th:value="${user.password}">
+    </div>
+    <div class="form-group">
+        <label>角色</label>
+        <input type="radio" name="role" value="1" th:checked="|${user.role==1}|"/>超级管理员
+        <input type="radio" name="role" value="2" th:checked="|${user.role==2}|"/>普通管理员
+    </div>
+
+    <div class="form-group">
+        <label>电话</label>
+        <input type="text" class="form-control" name="phone" th:value="${user.phone}">
+    </div>
+    <div class="form-group">
+        <label>邮箱</label>
+        <input type="text" class="form-control" name="email" th:value="${user.email}">
+    </div>
+    <div class="form-group">
+        <label>头像</label>
+        <input type="text" class="form-control" name="image" th:value="${user.image}">
+    </div>
+    <input class="btn btn-lg btn-primary" type="submit" value="修改">
+</form>
+</body>
+</html>

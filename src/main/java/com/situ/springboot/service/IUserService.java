@@ -8,4 +8,8 @@ public interface IUserService {
     List<User> selectAll();
     void deleteById(Integer id);
     void add(User user);
+
+    User selectById(Integer id);
+
+    void update(User user);
 }
