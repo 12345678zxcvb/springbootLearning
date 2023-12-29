@@ -25,5 +25,7 @@
         UPDATE user SET name=#{name},password=#{password},role=#{role},email=#{email},phone=#{phone},image=#{image}
         WHERE id=#{id}
     </update>
-
+    <select id="loginIdentify" resultType="User">
+        select * from user where name=#{name} And password=#{password}
+    </select>
 </mapper>

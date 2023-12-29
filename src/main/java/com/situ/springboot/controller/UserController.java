@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -14,6 +15,22 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @RequestMapping("/toLogin")
+    public String toLogin(){
+        return "user_login";
+    }
+    @RequestMapping("login")
+    public String login(String name, String password, HttpSession session){
+        User user = userService.loginIdentify(name,password);
+        if(user!=null){
+            session.setAttribute("user",user);
+            return "redirect:/";
+        }else {
+            return "redirect:/user/toLogin";
+        }
+    }
+
     @RequestMapping("/deleteById")
     public String deleteById(Integer id){
         userService.deleteById(id);

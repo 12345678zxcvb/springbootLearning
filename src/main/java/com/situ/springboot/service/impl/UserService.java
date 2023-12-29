@@ -30,4 +30,7 @@ public class UserService implements IUserService {
         userMapper.update(user);
     }
 
+    public User loginIdentify(String name, String password) {
+        return userMapper.loginIdentify(name,password);
+    }
 }

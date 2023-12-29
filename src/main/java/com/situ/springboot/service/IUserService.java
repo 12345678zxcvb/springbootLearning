@@ -12,4 +12,5 @@ public interface IUserService {
     User selectById(Integer id);
 
     void update(User user);
+    User loginIdentify(String name, String password);
 }
