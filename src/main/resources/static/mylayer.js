@@ -23,7 +23,7 @@ var mylayer = {
 	okMsg : function(content) {
 		layer.msg(
 			content,
-			{icon : 1, time : 3000}
+			{icon : 1, time : 2000}
 		);
 	},
 	// 表达失败的消息
