@@ -25,8 +25,11 @@ public class UserController {
 
     @RequestMapping("/login")
     @ResponseBody //返回json格式数据要加这个注解 @ResponseBody
-    public Result login(String name, String password,HttpSession session) {
-
+    public Result login(String name, String password,String code,HttpSession session) {
+        String codeInSession = (String) session.getAttribute("codeInSession");
+        if (!codeInSession.equalsIgnoreCase(code)) {
+            return Result.error("验证码错误");
+        }
         User user = userService.loginIdentify(name, password);
         if (user != null) {
             session.setAttribute("user", user);
