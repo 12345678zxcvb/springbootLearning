@@ -26,7 +26,7 @@
         <td th:text="${user.password}"></td>
         <td th:text="${user.email}"></td>
         <td th:text="${user.phone}"></td>
-        <td th:text="${user.image}"></td>
+        <td><img width="60px" height="40px" th:src="|/pic/${user.image}|"></td>
         <td th:text="${user.role}"></td>
 <!--        <td><a class="btn btn-danger" th:href="|/user/deleteById?id=${user.id}|">删除</a></td>-->
         <td><a class="btn btn-danger btn-sm" th:onclick="|deleteById(${user.id})|">删除</a></td>
