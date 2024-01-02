@@ -1,6 +1,7 @@
 package com.situ.springboot.service;
 
 import com.situ.springboot.pojo.User;
+import com.situ.springboot.util.PageInfo;
 
 import java.util.List;
 
@@ -13,4 +14,6 @@ public interface IUserService {
 
     void update(User user);
     User loginIdentify(String name, String password);
+
+    PageInfo selectByPage(Integer pageNo, Integer pageSize);
 }

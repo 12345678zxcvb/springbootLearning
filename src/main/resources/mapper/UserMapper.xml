@@ -28,4 +28,12 @@
     <select id="loginIdentify" resultType="User">
         select * from user where name=#{name} And password=#{password}
     </select>
+    <select id="selectByPage" resultType="User">
+        SELECT id,`name`,`password`,role,nick_name,email,phone,image,`status`,deleted,gmt_create,gmt_modified
+        FROM `user`
+        LIMIT #{offset},#{pageSize}
+    </select>
+    <select id="selectTotalCount" resultType="Integer">
+        select COUNT(*) from user
+    </select>
 </mapper>
