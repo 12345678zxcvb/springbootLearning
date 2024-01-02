@@ -16,6 +16,7 @@
         <td>邮箱</td>
         <td>电话</td>
         <td>头像</td>
+        <td>状态</td>
         <td>角色</td>
         <td>删除</td>
         <td>编辑</td>
@@ -27,6 +28,10 @@
         <td th:text="${user.email}"></td>
         <td th:text="${user.phone}"></td>
         <td><img width="60px" height="40px" th:src="|/pic/${user.image}|"></td>
+        <td>
+            <span class="label label-warning" th:if="${user.status==0}">禁用</span>
+            <span class="label label-success" th:if="${user.status==1}">正常</span>
+        </td>
         <td th:text="${user.role}"></td>
 <!--        <td><a class="btn btn-danger" th:href="|/user/deleteById?id=${user.id}|">删除</a></td>-->
         <td><a class="btn btn-danger btn-sm" th:onclick="|deleteById(${user.id})|">删除</a></td>

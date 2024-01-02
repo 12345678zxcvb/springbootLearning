@@ -32,6 +32,10 @@ public class UserController {
         }
         User user = userService.loginIdentify(name, password);
         if (user != null) {
+            if (user.getStatus() == 0) {
+                //这个用户禁用
+                return Result.error("该用户已经禁用");
+            }
             session.setAttribute("user", user);
 
             return Result.ok("登录成功");
