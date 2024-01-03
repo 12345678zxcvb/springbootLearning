@@ -16,6 +16,13 @@
     <delete id="deleteById" parameterType="Integer">
         DELETE FROM user WHERE id=#{id}
     </delete>
+    <delete id="deleteAll">
+        DELETE FROM user WHERE
+        id IN
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
 
     <insert id="add" parameterType="User">
         INSERT INTO user(name, password,email,phone,image,status,role) values (#{name},#{password},#{email},#{phone},#{image},#{status},#{role})

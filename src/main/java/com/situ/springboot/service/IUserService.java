@@ -16,4 +16,6 @@ public interface IUserService {
     User loginIdentify(String name, String password);
 
     PageInfo selectByPage(Integer pageNo, Integer pageSize);
+
+    void deleteAll(Integer[] ids);
 }

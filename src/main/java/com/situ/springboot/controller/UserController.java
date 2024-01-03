@@ -56,6 +56,11 @@ public class UserController {
         userService.deleteById(id);
         return "redirect:/user/selectByPage";
     }
+    @RequestMapping("/deleteAll")
+    public String deleteAll(Integer[] ids) {
+        userService.deleteAll(ids);
+        return "redirect:/user/selectByPage";
+    }
     @RequestMapping("/toAdd")
     public String toadd(){
         return "user_toadd";

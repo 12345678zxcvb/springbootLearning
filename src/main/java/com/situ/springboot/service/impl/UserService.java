@@ -50,4 +50,8 @@ public class UserService implements IUserService {
 
         return new PageInfo<User>(list, totalPage, pageNo, pageSize);
     }
+    @Override
+    public void deleteAll(Integer[] ids) {
+        userMapper.deleteAll(ids);
+    }
 }
