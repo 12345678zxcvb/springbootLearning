@@ -1,7 +1,7 @@
 package com.situ.springboot.service.impl;
 
 import com.situ.springboot.mapper.UserMapper;
-import com.situ.springboot.pojo.User;
+import com.situ.springboot.pojo.entity.User;
 import com.situ.springboot.service.IUserService;
 import com.situ.springboot.util.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +39,7 @@ public class UserService implements IUserService {
         return userMapper.loginIdentify(name,password);
     }
     @Override
-    public PageInfo selectByPage(Integer pageNo, Integer pageSize) {
+    public PageInfo<User> selectByPage(Integer pageNo, Integer pageSize) {
         // limit
         int offset = (pageNo - 1) * pageSize;
         //查找当前也数据
@@ -48,6 +48,6 @@ public class UserService implements IUserService {
         int totalCount = userMapper.selectTotalCount();
         int totalPage = (int)Math.ceil((double) totalCount / pageSize);
 
-        return new PageInfo(list, totalPage, pageNo, pageSize);
+        return new PageInfo<User>(list, totalPage, pageNo, pageSize);
     }
 }

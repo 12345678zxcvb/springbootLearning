@@ -1,9 +1,10 @@
 package com.situ.springboot.mapper;
 
-import com.situ.springboot.pojo.User;
+import com.situ.springboot.pojo.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-
+@Mapper
 public interface UserMapper {
     List<User> selectAll();
     void deleteById(Integer id);

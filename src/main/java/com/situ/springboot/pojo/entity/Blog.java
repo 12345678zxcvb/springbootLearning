@@ -1,4 +1,4 @@
-package com.situ.springboot.pojo;
+package com.situ.springboot.pojo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,19 +10,15 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Blog {
     private Integer id;
-    private String name;
-    private String password;
-    private Integer role;
-    private String nickName;
-    private String email;
-    private String phone;
+    private String title;
     private String image;
+    private Integer clickCount;
+    private String content;
+    private Integer typeId;
     private Integer status;
     private Integer deleted;
     private Date gmtCreate;
     private Date gmtModified;
-
-
 }

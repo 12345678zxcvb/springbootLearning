@@ -1,6 +1,6 @@
 package com.situ.springboot.controller;
 
-import com.situ.springboot.pojo.User;
+import com.situ.springboot.pojo.entity.User;
 import com.situ.springboot.service.impl.UserService;
 import com.situ.springboot.util.PageInfo;
 import com.situ.springboot.util.Result;
